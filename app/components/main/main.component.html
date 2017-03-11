@@ -1,0 +1,21 @@
+<section class="container">
+    <div class="row">
+       <div class="col s12">
+             <ul class="collection">
+                <li *ngFor="let res of restaurants" (click)="onSelect(res)" class="collection-item">
+                         <a routerLink="/restaurant/{{res._id}}">
+                            <p>{{res.name}}</p>     <p>{{res.location}}</p>
+                         
+                         </a>
+                            
+                </li>  
+                   
+             
+              
+              </ul>
+
+       </div>
+
+    </div>
+
+</section>

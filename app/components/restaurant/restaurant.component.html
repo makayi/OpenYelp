@@ -1,0 +1,132 @@
+
+<nav-bar> </nav-bar>
+
+
+<section class="container">
+ 
+
+ <div *ngIf="restaurant">
+     
+ <div class="row">
+        <div class="col s12">
+            <div class="card">            
+                <div class="card-image"> 
+                    <img src="{{restaurant.favicon}}"><span class="card-title title">{{restaurant.name}}</span>            
+                </div> 
+
+                <div class="card-content"> 
+                    <p>I am a very simple card. I am good at containing small bits of information.     
+                    I am convenient because I require little markup to use effectively.</p>          
+                </div>
+
+                <ul  class="tabs">
+                    <li class="tab col s3">
+                        <a  class="active" href="#one">Menus</a> 
+                    </li>
+                    <li class="tab col s3">
+                        <a  href="#two">About</a> 
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#three">Reviews</a> 
+                    </li>
+                </ul>
+
+               
+            </div>        
+                        
+        </div>      
+    </div>
+
+
+    <!-- end of row -->
+
+    <!-- start of row -->
+
+    
+        <div  class="row">
+            <div  id="one" class="col s12">
+                <ul class="collapsible" data-collapsible="accordion">
+                <li *ngFor="let menu of restaurant.menu">
+                     <p  class="collapsible-header">{{menu.name}}</p> 
+
+                     <div class="collapsible-body">
+
+                        
+                         <ul> 
+                             <li *ngFor="let item of menu.items">
+                                 <p> {{item.name}}</p>
+                             </li>
+                             
+                        </ul>
+                        
+                     </div>
+                            
+                     
+
+                            
+                </li>  
+                   
+             
+              
+              </ul>
+
+              
+
+       </div>
+
+       <div id="two" class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <h5> {{restaurant.address}}</h5> 
+                    <p>{{restaurant.location}} </p>
+
+                </div>
+
+            </div>
+       </div>
+
+       <div id="three" class="col s12">
+        <div >
+
+                <div class="card-content">
+
+                    <div *ngIf="restaurant.comments">
+                        <ul class="collection">
+                            <li  class="collection-item" *ngFor="let comment of restaurant.comments"> 
+                                <div>
+                                    <h6> 
+                                        {{comment.reviewer}}
+                                    </h6>
+                                    <p> {{comment.comment}}</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                   
+
+                </div>
+
+            </div>
+       </div>
+
+    
+ </div>
+
+  
+</div>
+
+
+       
+
+           
+     
+
+ 
+
+</section>
+
+
+  
+
